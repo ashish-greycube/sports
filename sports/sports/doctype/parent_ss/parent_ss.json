@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:parent_name",
+ "creation": "2021-10-27 15:27:56.656203",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "parent_name",
+  "relationship_with_child",
+  "cb_1",
+  "parent_mobile_no",
+  "parent_email",
+  "user",
+  "create_parent_user",
+  "sb_1",
+  "parent_children_ss"
+ ],
+ "fields": [
+  {
+   "fieldname": "parent_name",
+   "fieldtype": "Data",
+   "label": "Parent Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "relationship_with_child",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Relationship With Child",
+   "options": "Father\nMother\nGuardian",
+   "reqd": 1
+  },
+  {
+   "description": "Show User having Role = Parent SS",
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Parent User",
+   "options": "User"
+  },
+  {
+   "fieldname": "create_parent_user",
+   "fieldtype": "Button",
+   "label": "Create Parent User"
+  },
+  {
+   "fieldname": "cb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parent_mobile_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Parent Mobile No",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "parent_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Parent Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "sb_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "parent_children_ss",
+   "fieldtype": "Table",
+   "label": "Parent Children SS",
+   "options": "Parent Children SS"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-10-27 15:31:32.812737",
+ "modified_by": "Administrator",
+ "module": "Sports",
+ "name": "Parent SS",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Parent SS",
+   "share": 1
+  }
+ ],
+ "search_fields": "relationship_with_child,parent_mobile_no,parent_email",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
