@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "creation": "2021-10-18 17:30:14.225022",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "scan_qrcode",
+  "clear_qr_code"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "description": "<h1 style=\"text-align: center;\"><i class=\"fa fa-qrcode\"><h5 style=\"text-align: center;\">Scan</h5></i></h1> ",
+   "fieldname": "scan_qrcode",
+   "fieldtype": "Data",
+   "label": "QR Code",
+   "options": "Barcode"
+  },
+  {
+   "depends_on": "eval:(doc.scan_qrcode)",
+   "fieldname": "clear_qr_code",
+   "fieldtype": "Button",
+   "label": "Clear QR Code"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2021-10-26 19:53:06.769227",
+ "modified_by": "Administrator",
+ "module": "Sports",
+ "name": "Scan QR",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

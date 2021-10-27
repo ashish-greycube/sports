@@ -1,7 +1,8 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2021-10-15 12:17:19.792624",
+ "creation": "2021-10-25 16:13:41.806144",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -11,21 +12,13 @@
   "customer",
   "customer_name",
   "item_code",
-  "cb_1",
+  "column_break_6",
   "session_date",
   "total_session_allocated",
   "session_qty",
   "amended_from"
  ],
  "fields": [
-  {
-   "default": "SSC-.YY.MM.DD.-.#",
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Series",
-   "options": "SSC-.YY.MM.DD.-.#",
-   "reqd": 1
-  },
   {
    "fieldname": "session_allocation",
    "fieldtype": "Link",
@@ -67,7 +60,7 @@
    "reqd": 1
   },
   {
-   "fieldname": "cb_1",
+   "fieldname": "column_break_6",
    "fieldtype": "Column Break"
   },
   {
@@ -78,14 +71,6 @@
    "in_standard_filter": 1,
    "label": "Session Date",
    "reqd": 1
-  },
-  {
-   "fetch_from": "session_allocation.total_sessions_allocated.",
-   "fieldname": "total_session_allocated",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Total Session Allocated",
-   "read_only": 1
   },
   {
    "default": "1",
@@ -102,12 +87,29 @@
    "options": "Sports Session",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fetch_from": "session_allocation.total_sessions_allocated",
+   "fieldname": "total_session_allocated",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Session Allocated",
+   "read_only": 1
+  },
+  {
+   "default": "SSC-.YY.MM.DD.-.#",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "SSC-.YY.MM.DD.-.#",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
- "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-10-15 12:20:22.699074",
+ "modified": "2021-10-26 17:24:05.975184",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Sports Session",

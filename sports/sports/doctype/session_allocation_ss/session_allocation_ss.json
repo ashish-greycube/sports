@@ -22,6 +22,7 @@
    "default": "SS-.YY.-.#",
    "fieldname": "naming_series",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Series",
    "options": "SS-.YY.-.#",
    "reqd": 1
@@ -95,7 +96,7 @@
    "link_fieldname": "item_code"
   }
  ],
- "modified": "2021-10-15 12:01:28.922455",
+ "modified": "2021-10-23 10:58:26.510854",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Session Allocation SS",
