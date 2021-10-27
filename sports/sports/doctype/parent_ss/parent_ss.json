@@ -47,7 +47,8 @@
   {
    "fieldname": "create_parent_user",
    "fieldtype": "Button",
-   "label": "Create Parent User"
+   "label": "Create Parent User",
+   "options": "create_parent_user"
   },
   {
    "fieldname": "cb_1",
@@ -77,12 +78,13 @@
    "fieldname": "parent_children_ss",
    "fieldtype": "Table",
    "label": "Parent Children SS",
-   "options": "Parent Children SS"
+   "options": "Parent Children SS",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-10-27 15:31:32.812737",
+ "modified": "2021-10-27 20:28:10.147789",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Parent SS",

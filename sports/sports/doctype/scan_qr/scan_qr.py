@@ -30,7 +30,10 @@ def mark_attendance(scan_qrcode,item_code=None):
 					condition="AND SA.item_code='%s'"%(item_code)
 				else:
 					condition='AND 1=1'
-				res = frappe.db.sql("""select SA.customer_name,SA.customer,SA.item_code ,SA.name as session_allocation, SA.total_sessions_allocated as total_session, SA.total_sessions_allocated-IFNULL(sum(SS.session_qty),0) as session_available, IFNULL(sum(SS.session_qty),0) as session_consumed
+				res = frappe.db.sql("""select SA.customer_name,SA.customer,SA.item_code ,SA.name as session_allocation, 
+				SA.total_sessions_allocated as total_session, 
+				SA.total_sessions_allocated-IFNULL(sum(SS.session_qty),0) as session_available, 
+				IFNULL(sum(SS.session_qty),0) as session_consumed
 				 from `tabSession Allocation SS` SA left outer join `tabSports Session` SS
 		on SA.name =SS.session_allocation 
 		where SA.customer=%(scan_qrcode)s

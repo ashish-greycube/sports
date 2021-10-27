@@ -43,9 +43,13 @@ doctype_js = {"Sales Invoice" : "public/js/sales_invoice.js"}
 # home_page = "login"
 
 # website user home page (by Role)
-# role_home_page = {
-#	"Role": "home_page"
-# }
+website_redirects = [
+    {"source": "/orders", "target": "/sports_class_detail"},
+]
+role_home_page = {
+	"Customer" : "sports_class_detail",
+	"Parent SS": "sports_class_detail"
+}
 
 # Generators
 # ----------
@@ -138,7 +142,9 @@ doc_events = {
 # exempt linked doctypes from being automatically cancelled
 #
 # auto_cancel_exempted_doctypes = ["Auto Repeat"]
-
+# website_route_rules = [
+# 	{"from_route": "/orders", "to_route": "/sports_class_detail"}
+# ]
 
 # User Data Protection
 # --------------------

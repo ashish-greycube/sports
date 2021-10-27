@@ -1,0 +1,93 @@
+{% extends "templates/base.html" %}
+{% block title %}Sing Sports : Class Details{% endblock %}
+
+{% block head_include %}
+	<style>
+		div.card-hero-img {
+			height: 220px;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: rgb(250, 251, 252);
+		}
+
+		.card-image-wrapper {
+			display: flex;
+			overflow: hidden;
+			height: 220px;
+			background-color: rgb(250, 251, 252);
+			justify-content: center;
+		}
+
+		.image-body {
+			align-self: center;
+			color: #d1d8dd;
+			font-size: 24px;
+			font-weight: 600;
+			line-height: 1;
+			padding: 20px;
+		}
+
+		section {
+			padding: 5rem 0 5rem 0;
+		}
+	</style>
+{% endblock %}
+
+{{student_list}}
+
+
+{% block content %}
+<section class="section">
+	<div class='container'>
+				<div class="row" style="background-color: rgb(247, 250, 252); color: rgb(141, 153, 166);">
+					<div class="col-sm-2 ">
+						<b>Student</b>
+					</div>
+					<div class="col-sm-5">
+						<b>Class</b>
+					</div>
+					<div class="col-sm-1">
+						<b>Total</b>
+					</div>
+					<div class="col-sm-1">
+						<b>Consumed</b>
+					</div>
+					<div class="col-sm-1">
+						<b>Available</b>
+					</div>	
+					<div class="col-sm-2 text-right bold">
+							<b>Valid Till</b>
+					</div>
+				</div>
+
+
+			{% for course in courses %}
+
+			<div class="web-list-item transaction-list-item">
+				<div class="row">
+					<div class="col-sm-2">
+						{{ course.customer }}
+					</div>
+					<div class="col-sm-5">
+						{{ course.item_code }}
+					</div>
+					<div class="col-sm-1">
+						{{ course.total_session }}
+					</div>
+					<div class="col-sm-1">
+						{{ course.session_consumed }}
+					</div>
+					<div class="col-sm-1">
+						{{ course.session_available }}
+					</div>	
+	
+						<div class="col-sm-2 text-right bold">
+							{{ course.valid_till }}
+						</div>
+				</div>
+			</div>
+			{% endfor %}
+	</div>
+</section>
+{% endblock %}

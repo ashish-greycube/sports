@@ -2,7 +2,13 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Parent SS', {
-	// refresh: function(frm) {
-
-	// }
+	setup: function(frm) {
+	// 	frm.set_query('user', () => {
+	// 		return {
+	// 				filters: {
+	// 						role: 'India'
+	// 				}
+	// 		}
+	// })
+	}
 });
