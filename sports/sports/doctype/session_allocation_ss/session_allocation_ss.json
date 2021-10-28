@@ -11,6 +11,8 @@
   "customer_name",
   "item_code",
   "description",
+  "mobile_no",
+  "student_email",
   "cb_1",
   "invoice_reference",
   "session_start_date",
@@ -94,16 +96,30 @@
    "fieldtype": "Int",
    "label": "Consumed Sessions",
    "read_only": 1
+  },
+  {
+   "fetch_from": "customer.mobile_no",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Student Mobile No",
+   "options": "Phone"
+  },
+  {
+   "fetch_from": "customer.email_id",
+   "fieldname": "student_email",
+   "fieldtype": "Data",
+   "label": "Student Email",
+   "options": "Email"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [
   {
-   "link_doctype": "Item",
-   "link_fieldname": "item_code"
+   "link_doctype": "Sports Session",
+   "link_fieldname": "session_allocation"
   }
  ],
- "modified": "2021-10-27 21:09:22.461633",
+ "modified": "2021-10-28 09:48:38.309562",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Session Allocation SS",
