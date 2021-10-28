@@ -23,4 +23,5 @@ class ParentSS(Document):
 		self.user=user.name
 		print('update_password_link',update_password_link)
 		msgprint(_("password reset link {0}").format(update_password_link))
+		# https://github.com/frappe/erpnext/blob/develop/erpnext/buying/doctype/request_for_quotation/request_for_quotation.py#L164
 		return 
