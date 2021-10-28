@@ -11,12 +11,16 @@ class SportsSession(Document):
 	def after_insert(self):
 		session_consumed = frappe.db.get_value('Session Allocation SS', self.session_allocation, 'session_consumed')
 		session_consumed=cint(session_consumed)+cint(self.session_qty)
-		frappe.db.set_value('Session Allocation SS', self.session_allocation, 'session_consumed', cint(session_consumed))
+		doc = frappe.get_doc('Session Allocation SS', self.session_allocation)
+		doc.session_consumed =  cint(session_consumed)
+		doc.save(ignore_permissions=True)		
 
 	def on_trash(self):
 		session_consumed = frappe.db.get_value('Session Allocation SS', self.session_allocation, 'session_consumed')
 		session_consumed=cint(session_consumed)-cint(self.session_qty)
-		frappe.db.set_value('Session Allocation SS', self.session_allocation, 'session_consumed', cint(session_consumed))
+		doc = frappe.get_doc('Session Allocation SS', self.session_allocation)
+		doc.session_consumed =  cint(session_consumed)
+		doc.save(ignore_permissions=True)				
 
 	def validate(self):
 			existing_record=frappe.db.get_list('Sports Session', filters={'session_allocation': ['=', self.session_allocation],'session_date': ['=', self.session_date],'name': ['!=', self.name]},fields=['name']) 

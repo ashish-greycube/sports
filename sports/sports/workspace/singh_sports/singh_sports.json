@@ -35,7 +35,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Bulk Class Attendance",
+   "label": "Bulk Attendance - Class",
    "link_to": "Class Attendance Tool",
    "link_type": "DocType",
    "onboard": 0,
@@ -53,7 +53,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Class Enrolment",
+   "label": "Class Enrolment (Session Allocation)",
    "link_to": "Session Allocation SS",
    "link_type": "DocType",
    "onboard": 0,
@@ -62,7 +62,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Attendance Record",
+   "label": "Sports Session Attendance",
    "link_to": "Sports Session",
    "link_type": "DocType",
    "onboard": 0,
@@ -106,15 +106,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Batch",
-   "link_to": "Sports Batch",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Report",
    "link_type": "DocType",
    "onboard": 0,
@@ -122,7 +113,7 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Class Enrolment Detail",
    "link_to": "Class Enrolment Detail",
    "link_type": "Report",
@@ -130,7 +121,7 @@
    "type": "Link"
   }
  ],
- "modified": "2021-10-28 09:59:05.347221",
+ "modified": "2021-10-28 11:26:30.359429",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Singh Sports",

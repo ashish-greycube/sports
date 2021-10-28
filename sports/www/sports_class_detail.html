@@ -76,14 +76,19 @@
 						{{ course.total_session }}
 					</div>
 					<div class="col-sm-1">
-						{{ course.session_consumed }}
+						{{ frappe.format( course.session_consumed, {'fieldtype': 'Int'}) }}
 					</div>
 					<div class="col-sm-1">
-						{{ course.session_available }}
+						{{ frappe.format( course.session_available , {'fieldtype': 'Int'}) }}
 					</div>	
 	
 						<div class="col-sm-2 text-right bold">
-							{{ course.valid_till }}
+							{% if course.valid_till %}
+							{{ frappe.format( course.valid_till, {'fieldtype': 'Date'}) }}
+						{% else %}
+							
+						{%- endif -%}							
+						
 						</div>
 				</div>
 			</div>

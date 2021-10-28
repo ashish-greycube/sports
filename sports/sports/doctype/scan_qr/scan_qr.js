@@ -4,6 +4,7 @@
 frappe.ui.form.on('Scan QR', {
 	refresh: function (frm) {
 		frm.disable_save()
+		$("span:contains('Not Saved')").hide()
 	},
 	clear_qr_code: function (frm) {
 		frm.doc.scan_qrcode = ''

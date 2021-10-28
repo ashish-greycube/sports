@@ -4,6 +4,7 @@
 frappe.ui.form.on('Class Attendance Tool', {
 	refresh: function(frm) {
 		frm.disable_save();
+		$("span:contains('Not Saved')").hide()
 	},
 	session_date: function(frm) {
 		erpnext.class_attendance_tool.load_students(frm);
