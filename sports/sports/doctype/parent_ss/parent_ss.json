@@ -45,6 +45,7 @@
    "options": "User"
   },
   {
+   "depends_on": "eval:!doc.user",
    "fieldname": "create_parent_user",
    "fieldtype": "Button",
    "label": "Create Parent User",
@@ -84,7 +85,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-10-27 20:28:10.147789",
+ "modified": "2021-10-28 11:00:51.745541",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Parent SS",
