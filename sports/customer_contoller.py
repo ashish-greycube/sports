@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 import frappe
 from frappe import throw, _
+from frappe.utils import cstr
 import pyqrcode 
 import io
 
@@ -19,7 +20,7 @@ def validate_and_create_qrcode(self,method):
 			_file.save()
 			self.qr_code_cf=_file.file_url			
 		elif self.customer_name :
-			file_exists=frappe.db.get_list('File', filters={'file_url': ['=', self.qr_code_cf]})
+			file_exists=frappe.db.get_all('File', filters={'file_url': ['=', cstr(self.qr_code_cf)]})
 			if len(file_exists)==0:			
 				url = pyqrcode.create(self.customer_name)
 				buffer = io.BytesIO()

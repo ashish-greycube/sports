@@ -18,7 +18,7 @@ app_license = "MIT"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/sports/css/sports.css"
-# web_include_js = "/assets/sports/js/sports.js"
+web_include_js = "/assets/frappe/js/lib/jSignature.min.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "sports/public/scss/website"
@@ -52,7 +52,9 @@ role_home_page = {
 	"Customer" : "sports_class_detail",
 	"Parent SS": "sports_class_detail"
 }
-
+portal_menu_items = [
+    {"title": "I Agree", "route": "/agree", "role": "Customer"},
+]
 # Generators
 # ----------
 
