@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2021-11-23 08:53:47.212524",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "category",
+  "assessment__parameter",
+  "unit_of_measurement"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Sports Assessment Category",
+   "reqd": 1
+  },
+  {
+   "columns": 6,
+   "fieldname": "assessment__parameter",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Assessment  Parameter",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "unit_of_measurement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "UOM"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-11-23 09:03:27.148230",
+ "modified_by": "Administrator",
+ "module": "Sports",
+ "name": "Sports Assessment Template Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

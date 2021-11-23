@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2021-11-22 18:48:46.934656",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "category",
+  "assessment__parameter",
+  "assessment_value",
+  "unit_of_measurement",
+  "skill_level",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Sports Assessment Category",
+   "reqd": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "assessment__parameter",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Assessment  Parameter",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "assessment_value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Assessment Value"
+  },
+  {
+   "columns": 1,
+   "fieldname": "unit_of_measurement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit Of Measurement",
+   "options": "UOM"
+  },
+  {
+   "columns": 2,
+   "fieldname": "skill_level",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Skill Level"
+  },
+  {
+   "columns": 1,
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-11-23 09:03:12.250511",
+ "modified_by": "Administrator",
+ "module": "Sports",
+ "name": "Sports Assessment Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

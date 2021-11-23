@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2021-11-22 19:01:11.365698",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "student",
+  "location",
+  "column_break_4",
+  "assessment_date",
+  "anthropometric_indicators_section",
+  "anthroprometric_assessment_detail",
+  "physical_fitness_test_section",
+  "physical_fitness_assessment_detail",
+  "technical_fitness_test_section",
+  "technical_fitness_assessment_detail",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "SA-.YY.MM.-.#",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "SA-.YY.MM.-.#",
+   "reqd": 1
+  },
+  {
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Student",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Assessment Date ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "anthropometric_indicators_section",
+   "fieldtype": "Section Break",
+   "label": "ANTHROPOMETRIC INDICATORS"
+  },
+  {
+   "fieldname": "anthroprometric_assessment_detail",
+   "fieldtype": "Table",
+   "options": "Sports Assessment Detail"
+  },
+  {
+   "fieldname": "physical_fitness_test_section",
+   "fieldtype": "Section Break",
+   "label": "PHYSICAL FITNESS TEST"
+  },
+  {
+   "fieldname": "physical_fitness_assessment_detail",
+   "fieldtype": "Table",
+   "options": "Sports Assessment Detail"
+  },
+  {
+   "fieldname": "technical_fitness_test_section",
+   "fieldtype": "Section Break",
+   "label": "TECHNICAL FITNESS TEST"
+  },
+  {
+   "fieldname": "technical_fitness_assessment_detail",
+   "fieldtype": "Table",
+   "options": "Sports Assessment Detail"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sports Assessment",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-11-22 19:01:33.339699",
+ "modified_by": "Administrator",
+ "module": "Sports",
+ "name": "Sports Assessment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sports Instructor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "student",
+ "track_changes": 1
+}
