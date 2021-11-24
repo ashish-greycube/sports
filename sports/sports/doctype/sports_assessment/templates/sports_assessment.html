@@ -1,0 +1,162 @@
+{% extends "templates/web.html" %}
+{%- macro assessment_child_table(table_name,head_label) -%}
+{% if table_name -%}
+<div>
+	<div class="section-head">
+		<b>{{head_label}}</b>
+		<span class="ml-2 collapse-indicator mb-1" style="display: none;">
+		</span>
+	</div>
+	<div class="section-body">
+		<div class="form-column col-sm-12">
+			<form>
+				<div class="frappe-control form-group" data-fieldtype="Table" data-fieldname={{table_name}}>
+					<label class="control-label"></label>
+					<div class="form-grid">
+						<div class="grid-heading-row">
+							<div class="grid-row">
+								<div class="data-row row">
+									<div class="col grid-static-col col-xs-4  grid-overflow-no-ellipsis"
+										data-fieldname="assessment__parameter" data-fieldtype="Small Text" title="Assessment  Parameter">
+										<div class="field-area" style="display: none;"></div>
+										<div class="static-area ellipsis">Assessment Parameter</div>
+									</div>
+									<div class="col grid-static-col col-xs-2 " data-fieldname="assessment_value" data-fieldtype="Data"
+										title="Assessment Value">
+										<div class="field-area" style="display: none;"></div>
+										<div class="static-area ellipsis">Assessment Value</div>
+									</div>
+									<div class="col grid-static-col col-xs-2 " data-fieldname="unit_of_measurement" data-fieldtype="Link"
+										title="Unit Of Measurement">
+										<div class="field-area" style="display: none;"></div>
+										<div class="static-area ellipsis">Unit Of Measurement</div>
+									</div>
+									<div class="col grid-static-col col-xs-2 " data-fieldname="skill_level" data-fieldtype="Rating"
+										title="Skill Level">
+										<div class="field-area" style="display: none;"></div>
+										<div class="static-area ellipsis">Skill Level</div>
+									</div>
+									<div class="col grid-static-col col-xs-2  grid-overflow-no-ellipsis" data-fieldname="remarks"
+										data-fieldtype="Small Text" title="Remarks">
+										<div class="field-area" style="display: none;"></div>
+										<div class="static-area ellipsis">Remarks</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-body">
+							<div class="rows"></div>
+							{% for d in table_name -%}
+							
+								<div class="grid-row" data-name={{d.name}} data-idx={{d.idx}}>
+									<div class="data-row row">
+										<div class="col grid-static-col col-xs-4  grid-overflow-no-ellipsis bold"
+											data-fieldname="assessment__parameter" data-fieldtype="Small Text">
+											<div class="field-area" style="display: none;"></div>
+											<div class="static-area ellipsis">{{d.assessment__parameter}}</div>
+										</div>
+										<div class="col grid-static-col col-xs-2 " data-fieldname="assessment_value" data-fieldtype="Data">
+											<div class="field-area" style="display: none;"></div>
+											<div class="static-area ellipsis">{{d.assessment_value}}</div>
+										</div>
+										<div class="col grid-static-col col-xs-2 " data-fieldname="unit_of_measurement"
+											data-fieldtype="Link">
+											<div class="field-area" style="display: none;"></div>
+											<div class="static-area ellipsis">{{d.unit_of_measurement}}</div>
+										</div>
+										<div class="col grid-static-col col-xs-2 " data-fieldname="skill_level" data-fieldtype="Rating">
+											<div class="field-area" style="display: none;"></div>
+											<div class="static-area ellipsis">
+												<div class="rating {{ 'ratings-pill' if for_summary else ''}}">
+													{% set skill_level = 0 if not d.skill_level else d.skill_level%}
+													{% for i in range(1,6) %}
+													{% set fill_class = 'star-click' if i <= skill_level else '' %}
+													<svg class="icon icon-{{ size }} {{ fill_class }}">
+														<use href="#icon-star"></use>
+													</svg>
+													{% endfor %}
+												</div>
+											</div>
+										</div>
+										<div class="col grid-static-col col-xs-2  grid-overflow-no-ellipsis" data-fieldname="remarks"
+											data-fieldtype="Small Text">
+											<div class="field-area" style="display: none;"></div>
+											<div class="static-area ellipsis">{{d.remarks}}</div>
+										</div>
+									</div>
+								</div>
+							
+							{%- endfor %}
+						</div>
+						</div>
+					</div>
+			</form>
+		</div>
+	</div>
+</div>
+{%- endif %}
+
+{%- endmacro -%}
+{% block breadcrumbs %}
+{% include "templates/includes/breadcrumbs.html" %}
+{% endblock %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block header %}
+<h1>{{ title }}</h1>
+{% endblock %}
+
+{% block page_content %}
+<hr>
+<div class="row form-section visible-section">
+	<div class="section-body">
+		<div class="form-column col-sm-6">
+			<form>
+				<div class="frappe-control input-max-width" data-fieldtype="Autocomplete" data-fieldname="student">
+					<div class="form-group">
+						<div class="clearfix"> <label class="control-label" style="padding-right: 0px;font-weight:bold;">Student</label> </div>
+						<div class="control-input-wrapper">
+							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{student}}</div>
+							<p class="help-box small text-muted"></p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="form-column col-sm-6">
+			<form>
+				<div class="frappe-control input-max-width" data-fieldtype="Autocomplete" data-fieldname="student">
+					<div class="form-group">
+						<div class="clearfix"> <label class="control-label " style="padding-right: 0px;font-weight:bold;">Location</label> </div>
+						<div class="control-input-wrapper">
+							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{location}}</div>
+							<p class="help-box small text-muted"></p>
+						</div>
+					</div>
+				</div>
+				<div class="frappe-control input-max-width" data-fieldtype="Autocomplete" data-fieldname="student">
+					<div class="form-group">
+						<div class="clearfix"> <label class="control-label " style="padding-right: 0px;font-weight:bold;">Assessment Date </label> </div>
+						<div class="control-input-wrapper">
+							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{ frappe.format_date(assessment_date) }}</div>
+							<p class="help-box small text-muted"></p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<br>
+{% set head_label ='ANTHROPOMETRIC INDICATORS'%}
+{{assessment_child_table(anthroprometric_assessment_detail,head_label)}}
+
+{% set head_label ='PHYSICAL FITNESS TEST'%}
+{{assessment_child_table(physical_fitness_assessment_detail,head_label)}}
+
+{% set head_label ='TECHNICAL FITNESS TEST'%}
+{{assessment_child_table(technical_fitness_assessment_detail,head_label)}}
+
+{% endblock %}
+<!-- this is a sample default web page template -->

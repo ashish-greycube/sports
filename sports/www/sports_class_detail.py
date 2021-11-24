@@ -14,6 +14,8 @@ def get_context(context):
 	# except KeyError:
 	# 	frappe.local.flags.redirect_location = '/me'
 	# 	raise frappe.Redirect
+	context.title="Sports Class Summary"
+	context.parents = [{'title': _('Student Account'), 'route': 'student_account' }]
 	context.student_list=get_current_student()
 	context.courses = get_data(get_current_student())
 

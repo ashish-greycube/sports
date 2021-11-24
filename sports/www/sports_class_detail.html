@@ -1,5 +1,8 @@
-{% extends "templates/base.html" %}
-{% block title %}Sing Sports : Class Details{% endblock %}
+{% extends "templates/web.html" %}
+{% block breadcrumbs %}
+{% include "templates/includes/breadcrumbs.html" %}
+{% endblock %}
+{% block title %}Sing Sports : Class Summary{% endblock %}
 
 {% block head_include %}
 	<style>
@@ -33,11 +36,11 @@
 		}
 	</style>
 {% endblock %}
+{% block header %}
+<h1>{{ title }}</h1>
+{% endblock %}
 
-{{student_list}}
-
-
-{% block content %}
+{% block page_content %}
 <section class="section">
 	<div class='container'>
 				<div class="row" style="background-color: rgb(247, 250, 252); color: rgb(141, 153, 166);">

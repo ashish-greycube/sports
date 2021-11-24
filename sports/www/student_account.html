@@ -1,0 +1,17 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("Student Account") }}{% endblock %}
+{% block header %}<h1>{{ _("Student Account") }}</h1>{% endblock %}
+
+{% block page_content %}
+<!-- no-cache -->
+<div class="row your-account-info d-none d-sm-block">
+	<div class="col-sm-4">
+		<ul class="list-unstyled">
+			<li><a href="/agree">{{ _("Waiver Sign") }}</a></li>
+			<li><a href="/assessments">{{ _("My Assessments") }}</a></li>
+			<li><a href="/sports_class_detail">{{ _("My Class Summary") }}</a></li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

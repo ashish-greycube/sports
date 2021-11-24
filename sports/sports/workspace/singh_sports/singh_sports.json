@@ -18,7 +18,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Transaction",
+   "label": "Attendance",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -40,6 +40,58 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Session Attendance",
+   "link_to": "Sports Session",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assessment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assessment Review",
+   "link_to": "Sports Assessment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assessment Category",
+   "link_to": "Sports Assessment Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assessment Template",
+   "link_to": "Sports Assessment Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Enrolment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
   },
   {
    "hidden": 0,
@@ -70,10 +122,10 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sports Session Attendance",
-   "link_to": "Sports Session",
-   "link_type": "DocType",
+   "is_query_report": 1,
+   "label": "Class Enrolment Detail",
+   "link_to": "Class Enrolment Detail",
+   "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   },
@@ -115,22 +167,22 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Report",
+   "label": "Setup",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
   {
    "hidden": 0,
-   "is_query_report": 1,
-   "label": "Class Enrolment Detail",
-   "link_to": "Class Enrolment Detail",
-   "link_type": "Report",
+   "is_query_report": 0,
+   "label": "Settings",
+   "link_to": "Sports Settings",
+   "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2021-10-28 13:09:04.164209",
+ "modified": "2021-11-24 16:45:30.985850",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Singh Sports",

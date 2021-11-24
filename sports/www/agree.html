@@ -1,76 +1,94 @@
-{% extends "templates/base.html" %}
+{% extends "templates/web.html" %}
 {% block title %}Sing Sports : Agree to terms of usage{% endblock %}
 {% block script %}
 <script src="agree.js"></script>
 {% endblock %}
 {% block head_include %}
-	<style>
-            #signature{
-                width: 50%;
-                height: auto;
-                border: 1px solid black;
-            }		
-						.container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 2px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "terms"
-    "sign"
-   ;
-}
-.terms { grid-area: terms; }
-.sign { grid-area: sign; }
-	</style>
+<style>
+	#signature {
+		width: 50%;
+		height: auto;
+		border: 1px solid black;
+	}
+</style>
+{% endblock %}
+
+{% block breadcrumbs %}
+{% include "templates/includes/breadcrumbs.html" %}
 {% endblock %}
 
 
-{% block content %}
+{% block header %}
+<h1>{{ title }}</h1>
+{% endblock %}
+{% block page_content %}
+<hr>
 <div class="container">
-  <div class="terms">
-		<h4 style='color: rgb(92, 20, 20);'>By clicking  on submit below you Agree to our Facility's Usage Terms and Conditions mentioned below</h4>
-		<div class="description">Centre For Sports Excellence Private Limited (“CFSEPL”) owns and operates this “Centre for Sports Excellence” (the “Centre”), a high performance sports facility which offers, inter alia world class sporting and training facilities in multiple disciplines.
-	
-	I am the official and legal guardian of the minor (“Ward”) utilising or accessing the facilities offered in the Centre (each, a "Sports Facility" and collectively, the “Sports Facilities”) and have the legal right to represent the Ward and undertake on the Ward’s behalf to adhere to and fulfil the obligations and terms and conditions of these Facility Use Terms.
-	
-	I, in my personal capacity and on behalf of my Ward, agree, by utilizing or accessing the Sports Facilities, to be bound by these Facility Use Terms (“Terms”) and that the use of the Sports Facility is contingent upon our acceptance and adherence to these Terms.
-	
-	I represent, in my personal capacity and on behalf of my Ward that we are physically capable of undertaking any particular activity in the Sports Facilities.
-	
-	I, in my personal capacity and on behalf of my Ward agree that in case of any doubts about our ability to undertake physical exercise we shall not do so or I shall obtain the advice of a doctor before utilising the Sports Facilities.
-	
-	I, in my personal capacity and on behalf of my Ward, agree and acknowledge that no smoking is permitted in any area of the Centre (whether inside or outside of the premises within 20 metres).
-	
-	I, in my personal capacity and on behalf of my Ward, agree we shall wear appropriate apparel and equipment at all times whilst in the Centre or using the Sports Facilities.
-	
-	I, in my personal capacity and on behalf of my Ward, agree that we may not use the Sports Facilities under the influence of drugs or alcohol.
-	
-	I, in my personal capacity and on behalf of my Ward, agree that no food, chewing gum, open drinks containers, glass or vehicles are permitted on or near areas of play.
-	
-	I, in my personal capacity and on behalf of my Ward, agree and acknowledge that users of the Sports and visitors at the Centre are not permitted to bring pets or animals into the Centre premises.
-	
-	I agree to accompany my Ward at all times and be responsible for ensuring their safe conduct.
-	
-	I agree to furnish a valid government issued photo ID if requested by CFSEPL staff to use the Sports Facilities.
-	
-	I, in my personal capacity and on behalf of my Ward, agree to ensure that all personal belongings are on our person or physically secure at all times at our own risk. CFSEPL and the Centre’s staff will not be legally responsible for the possessions of the users of the Sports Facilities at the Centre.
-	
-	I, in my personal capacity and on behalf of my Ward, fully understand and acknowledge that the utilization of a Sports Facility carries foreseeable and unforeseeable risks, including, without limitation, the risk of serious bodily harm and death. Knowing these risks I, in my personal capacity and on behalf of my Ward, and our legal heirs, executors, legal representatives and administrators hereby agree to assume all the risks and responsibilities surrounding such utilization of the Sports Facilities.
-	
-	To the maximum extent permitted by law, I in my personal capacity and on behalf of my Ward release and hold harmless CFSEPL and its coaches, personnel, staff, representatives, employees, agents and any other persons or entities associated directly or indirectly with CFSEPL (“Releasees”) from and against any present or future claims, demands, liabilities, costs and expenses to my or my Ward’s property and for any and all illness or injury to my or my Ward’s person, including my or my Ward’s death, or for any other damage, which I or my Ward may suffer, or for which I or my Ward may be liable to any other person, related to my or my Ward’s use of the Sports Facilities.
-	</div>
+	<div class="row">
 
+		<div class="col-sm-6"><h6 style='color: rgb(92, 20, 20);'>Your Details:</h6></div>
+		<div class="col-sm-6"></div>
+		<div class="col-sm-6">
+			{% set existing_sign = student_signature_cf %}
+			{% if existing_sign!='None' -%}
+			<div  class="hidden"><textarea id="existing_sign">{{existing_sign}}</textarea></div>
+			{%- endif %}
+			<!-- Signature area -->
+			<label class="control-label" style="padding-right: 0px;font-weight:bold;">Name:  {{student}}</label>
+		</div>
+		<div class="col-sm-6">
+			<div class="frappe-control input-max-width" data-fieldtype="Select" >
+				<div class="form-group">
+					<div class="clearfix"> <label class="control-label" style="padding-right 0px;;font-weight:bold;">Waiver Signed By</label> </div>
+					<div class="control-input-wrapper">
+						<div class="control-input flex align-center"><select type="text" autocomplete="off"
+								class="input-with-feedback form-control ellipsis" maxlength="140" data-fieldtype="Select"
+								data-fieldname="waiver_signed_by_cf" placeholder="" id="waiver_signed_by_cf">
+								{% set waiver_signed_by = waiver_signed_by_cf %}
+							
+								{% if waiver_signed_by=='Me' -%}
+								<option value="Me" selected>Me</option>
+								<option value="My Ward">My Ward</option>
+								{%- else %}
+								<option value="Me">Me</option>
+								<option value="My Ward" selected>My Ward</option>							
+								{%- endif %}
+	
+							</select>
+							<div class="select-icon ">
+								<svg class="icon icon-sm" style="">
+									<use class="" href="#icon-select"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="control-value like-disabled-input" style="display: none;">Me</div>
+						<p class="help-box small text-muted"></p>
+					</div>
+				</div>
+			</div>			
+		</div>
 	</div>
-  <div class="sign">
-		<p><h4 style='color: rgb(92, 20, 20);'>Draw your signature in the box below and click the 'I agree' button</h4></p>
-        
-		<!-- Signature area -->
-		<div id="signature"></div>
-		<input type='button' id='click' value='I agree'>
+	<div class="row">
+		<div class="col-sm-12"><br></div>
+</div>
+	<div class="row">
+			<div class="col-sm-12">
+				<h6 style='color: rgb(92, 20, 20);'>By clicking on the 'I agree' button, <u>you agree</u> to our facility's usage terms and conditions mentioned as below</h6>
+				{{waiver_terms}}
+				</div>
 	</div>
+	<div class="row">
+		<div class="col-sm-12"><br></div>
+</div>
+	<div class="row">
+			<div class="col-sm-12">
+					<h6 style='color: rgb(92, 20, 20);'>Draw your signature in the box below and click on the 'I agree' button</h6>
+				<!-- Signature area -->
+				<div id="signature"></div>
+				<input  type='button' id='click' value='I agree'>
 
+			</div>
+	</div>
 </div>
 
 {% endblock %}

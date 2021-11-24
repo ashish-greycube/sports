@@ -31,7 +31,10 @@ web_include_js = "/assets/frappe/js/lib/jSignature.min.js"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Sales Invoice" : "public/js/sales_invoice.js"}
+doctype_js = {
+	"Sales Invoice" : "public/js/sales_invoice.js",
+	"Customer" : "public/js/customer.js"
+	}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -53,13 +56,15 @@ role_home_page = {
 	"Parent SS": "sports_class_detail"
 }
 portal_menu_items = [
-    {"title": "I Agree", "route": "/agree", "role": "Customer"},
+    {"title": "Waiver Sign", "route": "/agree", "role": "Customer"},
+		{"title": "My Assessments", "route": "/assessments", "role": "Customer"},
+		{"title": "My Class Summary", "route": "/sports_class_detail", "role": "Customer"},
 ]
 # Generators
 # ----------
 
 # automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
+website_generators = ["Sports Assessment"]
 
 # Installation
 # ------------
@@ -146,9 +151,9 @@ doc_events = {
 # exempt linked doctypes from being automatically cancelled
 #
 # auto_cancel_exempted_doctypes = ["Auto Repeat"]
-# website_route_rules = [
-# 	{"from_route": "/orders", "to_route": "/sports_class_detail"}
-# ]
+website_route_rules = [
+	{"from_route": "/assessments", "to_route": "Sports Assessment"}
+]
 
 # User Data Protection
 # --------------------
