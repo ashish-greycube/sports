@@ -70,13 +70,13 @@
 			<div class="web-list-item transaction-list-item">
 				<div class="row">
 					<div class="col-sm-2">
-						{{ course.customer }}
+						{{ course.customer or '' }}
 					</div>
 					<div class="col-sm-5">
-						{{ course.item_code }}
+						{{ course.item_code  or ''}}
 					</div>
 					<div class="col-sm-1">
-						{{ course.total_session }}
+						{{ course.total_session or ''}}
 					</div>
 					<div class="col-sm-1">
 						{{ frappe.format( course.session_consumed, {'fieldtype': 'Int'}) }}

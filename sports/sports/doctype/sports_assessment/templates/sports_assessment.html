@@ -16,27 +16,27 @@
 						<div class="grid-heading-row">
 							<div class="grid-row">
 								<div class="data-row row">
-									<div class="col grid-static-col col-xs-4  grid-overflow-no-ellipsis"
+									<div class="col  col-xs-4  grid-overflow-no-ellipsis"
 										data-fieldname="assessment__parameter" data-fieldtype="Small Text" title="Assessment  Parameter">
 										<div class="field-area" style="display: none;"></div>
 										<div class="static-area ellipsis">Assessment Parameter</div>
 									</div>
-									<div class="col grid-static-col col-xs-2 " data-fieldname="assessment_value" data-fieldtype="Data"
+									<div class="col  col-xs-2 " data-fieldname="assessment_value" data-fieldtype="Data"
 										title="Assessment Value">
 										<div class="field-area" style="display: none;"></div>
 										<div class="static-area ellipsis">Assessment Value</div>
 									</div>
-									<div class="col grid-static-col col-xs-2 " data-fieldname="unit_of_measurement" data-fieldtype="Link"
+									<div class="col  col-xs-2 " data-fieldname="unit_of_measurement" data-fieldtype="Link"
 										title="Unit Of Measurement">
 										<div class="field-area" style="display: none;"></div>
 										<div class="static-area ellipsis">Unit Of Measurement</div>
 									</div>
-									<div class="col grid-static-col col-xs-2 " data-fieldname="skill_level" data-fieldtype="Rating"
+									<div class="col  col-xs-2 " data-fieldname="skill_level" data-fieldtype="Rating"
 										title="Skill Level">
 										<div class="field-area" style="display: none;"></div>
 										<div class="static-area ellipsis">Skill Level</div>
 									</div>
-									<div class="col grid-static-col col-xs-2  grid-overflow-no-ellipsis" data-fieldname="remarks"
+									<div class="col  col-xs-2  grid-overflow-no-ellipsis" data-fieldname="remarks"
 										data-fieldtype="Small Text" title="Remarks">
 										<div class="field-area" style="display: none;"></div>
 										<div class="static-area ellipsis">Remarks</div>
@@ -50,21 +50,21 @@
 							
 								<div class="grid-row" data-name={{d.name}} data-idx={{d.idx}}>
 									<div class="data-row row">
-										<div class="col grid-static-col col-xs-4  grid-overflow-no-ellipsis bold"
+										<div class="col  col-xs-4  grid-overflow-no-ellipsis bold"
 											data-fieldname="assessment__parameter" data-fieldtype="Small Text">
 											<div class="field-area" style="display: none;"></div>
-											<div class="static-area ellipsis">{{d.assessment__parameter}}</div>
+											<div class="static-area">{{d.assessment__parameter}}</div>
 										</div>
-										<div class="col grid-static-col col-xs-2 " data-fieldname="assessment_value" data-fieldtype="Data">
+										<div class="col  col-xs-2 " data-fieldname="assessment_value" data-fieldtype="Data">
 											<div class="field-area" style="display: none;"></div>
-											<div class="static-area ellipsis">{{d.assessment_value}}</div>
+											<div class="static-area ellipsis">{{d.assessment_value or ''}}</div>
 										</div>
-										<div class="col grid-static-col col-xs-2 " data-fieldname="unit_of_measurement"
+										<div class="col  col-xs-2 " data-fieldname="unit_of_measurement"
 											data-fieldtype="Link">
 											<div class="field-area" style="display: none;"></div>
-											<div class="static-area ellipsis">{{d.unit_of_measurement}}</div>
+											<div class="static-area ellipsis">{{d.unit_of_measurement or ''}}</div>
 										</div>
-										<div class="col grid-static-col col-xs-2 " data-fieldname="skill_level" data-fieldtype="Rating">
+										<div class="col  col-xs-2 " data-fieldname="skill_level" data-fieldtype="Rating">
 											<div class="field-area" style="display: none;"></div>
 											<div class="static-area ellipsis">
 												<div class="rating {{ 'ratings-pill' if for_summary else ''}}">
@@ -78,10 +78,10 @@
 												</div>
 											</div>
 										</div>
-										<div class="col grid-static-col col-xs-2  grid-overflow-no-ellipsis" data-fieldname="remarks"
+										<div class="col  col-xs-2  grid-overflow-no-ellipsis" data-fieldname="remarks"
 											data-fieldtype="Small Text">
 											<div class="field-area" style="display: none;"></div>
-											<div class="static-area ellipsis">{{d.remarks}}</div>
+											<div class="static-area ellipsis">{{d.remarks or ''}}</div>
 										</div>
 									</div>
 								</div>
@@ -117,7 +117,7 @@
 					<div class="form-group">
 						<div class="clearfix"> <label class="control-label" style="padding-right: 0px;font-weight:bold;">Student</label> </div>
 						<div class="control-input-wrapper">
-							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{student}}</div>
+							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{student or ''}}</div>
 							<p class="help-box small text-muted"></p>
 						</div>
 					</div>
@@ -130,7 +130,7 @@
 					<div class="form-group">
 						<div class="clearfix"> <label class="control-label " style="padding-right: 0px;font-weight:bold;">Location</label> </div>
 						<div class="control-input-wrapper">
-							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{location}}</div>
+							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{location or ''}}</div>
 							<p class="help-box small text-muted"></p>
 						</div>
 					</div>
@@ -139,7 +139,7 @@
 					<div class="form-group">
 						<div class="clearfix"> <label class="control-label " style="padding-right: 0px;font-weight:bold;">Assessment Date </label> </div>
 						<div class="control-input-wrapper">
-							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{ frappe.format_date(assessment_date) }}</div>
+							<div class="input-with-feedback form-control" style="padding-right: 0px;">{{ frappe.format_date(assessment_date,'dd MMM YYYY ') }}</div>
 							<p class="help-box small text-muted"></p>
 						</div>
 					</div>
