@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:sports_assessment_category",
  "creation": "2021-11-22 18:48:43.953194",
@@ -21,7 +22,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-11-22 18:48:43.953194",
+ "modified": "2021-12-07 11:56:36.753657",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Sports Assessment Category",
