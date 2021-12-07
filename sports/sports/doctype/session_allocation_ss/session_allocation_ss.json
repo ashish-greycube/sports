@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "autoname": "naming_series:",
  "creation": "2021-10-15 11:50:29.194520",
  "doctype": "DocType",
@@ -119,7 +120,7 @@
    "link_fieldname": "session_allocation"
   }
  ],
- "modified": "2021-10-28 09:48:38.309562",
+ "modified": "2021-12-07 12:49:43.703054",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Session Allocation SS",
