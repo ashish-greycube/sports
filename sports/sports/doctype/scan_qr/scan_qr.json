@@ -29,7 +29,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2021-10-26 19:53:06.769227",
+ "modified": "2022-01-12 09:31:20.558561",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Scan QR",
@@ -42,6 +42,16 @@
    "print": 1,
    "read": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Sports Instructor",
    "share": 1,
    "write": 1
   }

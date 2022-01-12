@@ -29,7 +29,6 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
-   "in_list_view": 1,
    "label": "Series",
    "options": "SA-.YY.MM.-.#",
    "reqd": 1
@@ -127,7 +126,7 @@
  "is_published_field": "published",
  "is_submittable": 1,
  "links": [],
- "modified": "2021-11-25 11:11:06.140749",
+ "modified": "2022-01-12 09:29:30.687078",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Sports Assessment",

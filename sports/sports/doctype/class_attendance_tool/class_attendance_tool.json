@@ -62,7 +62,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2021-10-26 20:02:55.786997",
+ "modified": "2022-01-12 09:31:07.352769",
  "modified_by": "Administrator",
  "module": "Sports",
  "name": "Class Attendance Tool",
@@ -75,6 +75,16 @@
    "print": 1,
    "read": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Sports Instructor",
    "share": 1,
    "write": 1
   }
