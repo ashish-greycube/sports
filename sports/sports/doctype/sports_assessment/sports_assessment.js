@@ -3,9 +3,10 @@
 
 frappe.ui.form.on('Sports Assessment', {
 
-	student: function (frm) {
-		if (frm.is_new() == 1 && frm.doc.student != undefined) {
-			frappe.db.get_single_value('Sports Settings', 'anthropometric_template')
+	refresh: function (frm) {
+		if (frm.doc.docstatus==0 ) {
+			frm.add_custom_button('Fetch Assessment Template', () => {
+				frappe.db.get_single_value('Sports Settings', 'anthropometric_template')
 				.then(anthropometric_template => {
 					if (anthropometric_template) {
 						let template_name = anthropometric_template
@@ -30,11 +31,21 @@ frappe.ui.form.on('Sports Assessment', {
 						set_sports_assessment_template_detail(frm, template_name, child_table_name)
 					}
 				})
-			frappe.after_ajax().then(
-				setTimeout(() => {
-					frm.save()
-				}, 1000)
-			)
+			// frappe.after_ajax().then(
+			// 	setTimeout(() => {
+			// 		frm.save()
+			// 	}, 1000)
+			// )
+		})	
+		$('[data-label="Fetch%20Assessment%20Template"]').removeClass(' btn-default')
+		$('[data-label="Fetch%20Assessment%20Template"]').addClass('btn-warning')	
+		}
+
+	},
+
+	student: function (frm) {
+		if (frm.is_new() == 1 && frm.doc.student != undefined) {
+
 
 		}
 	},
